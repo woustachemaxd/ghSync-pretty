@@ -48,6 +48,42 @@ const initializeGit = () => {
 };
 const program = new Command();
 
+const push = program.command('push');
+
+push
+    .description('Pushes changes to the remote repository.')
+    .requiredOption('-m, --message <message>', 'Git commit message')
+    .action((options) => {
+        const { message } = options;
+        exec('git status', (error) => {
+            if (error) {
+                printError('Git repository not initialized.');
+                process.exit(1);
+            }
+            exec('git add .', (error) => {
+                if (error) {
+                    printError('Failed to add files to the Git repository.');
+                    process.exit(1);
+                }
+                exec(`git commit -m "${message}"`, (error) => {
+                    if (error) {
+                        printError('Failed to commit changes.');
+                        process.exit(1);
+                    }
+                    exec('git push', (error) => {
+                        if (error) {
+                            printError('Failed to push changes to the remote repository.');
+                            process.exit(1);
+                        }
+                        printSuccess('🚀 Changes pushed successfully.');
+                    });
+                });
+            });
+        })
+    });
+
+
+
 program
     .version('1.0.0')
     .description('🚀 This Node.js command-line tool automates Git repository initialization, initial commit, and GitHub remote creation with customizable options. 🌐')
