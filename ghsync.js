@@ -58,21 +58,25 @@ push
         exec('git status', (error) => {
             if (error) {
                 printError('Git repository not initialized.');
+                console.log(error)
                 process.exit(1);
             }
             exec('git add .', (error) => {
                 if (error) {
                     printError('Failed to add files to the Git repository.');
+                    console.log(error)
                     process.exit(1);
                 }
                 exec(`git commit -m "${message}"`, (error) => {
                     if (error) {
                         printError('Failed to commit changes.');
+                        console.log(error)
                         process.exit(1);
                     }
                     exec('git push', (error) => {
                         if (error) {
                             printError('Failed to push changes to the remote repository.');
+                            console.log(error)
                             process.exit(1);
                         }
                         printSuccess('🚀 Changes pushed successfully!');
