@@ -48,9 +48,9 @@ const initializeGit = () => {
 };
 const program = new Command();
 
-const push = program.command('push');
+const sync = program.command('sync');
 
-push
+sync
     .description('Pushes changes to the remote repository.')
     .requiredOption('-m, --message <message>', 'Git commit message')
     .action((options) => {
