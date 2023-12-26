@@ -48,6 +48,29 @@ const initializeGit = () => {
 };
 const program = new Command();
 
+const open = program.command('open');
+
+open
+    .description('Opens the remote repository in the browser.')
+    .action(() => {
+        exec('git remote get-url origin', (error, stdout) => {
+            if (error) {
+                printError('Git repository not initialized.');
+                console.log(error)
+                process.exit(1);
+            }
+            const originPath = stdout.trim();
+            exec(`gh repo view --web ${originPath}`, (error) => {
+                if (error) {
+                    printError('Failed to open the remote repository.');
+                    console.log(error)
+                    process.exit(1);
+                }
+                console.log(`🌐 Opening the remote repository in the browser... \n ${originPath}`)
+            });
+        });
+    });
+
 const sync = program.command('sync');
 
 sync
