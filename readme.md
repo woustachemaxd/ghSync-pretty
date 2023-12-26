@@ -1,12 +1,17 @@
  #ghsync -h
  ```
-
-          __   _____
-   ____ _/ /_ / ___/__ ______  _____
-  / __ `/ __ \ \__ \/ / / / __ \/ ___/
- / /_/ / / / /__/ / / /_/ / / / / /__  
- \__, /_/ /_/____/\__, //_/ /_/\___/  
-/____/           /____/
+<span style="color:red">          __   _____</span>
+<span style="color:red">   ____ _/ /_/ /_ / ___/__  ______  _____</span>
+<span style="color:green">  / __ \`/ __ \ \__ \/ / / / __ \/ ___/</span>
+<span style="color:yellow"> / /_/ / / / /__/ / /_/ / / / / /__</span>
+<span style="color:blue"> \__, /_/ /_/____/\__, /_/ /_/ \___/</span>
+<span style="color:purple">/____/           /____/</span>
+<span style="color:red">          __   _____</span>
+<span style="color:red">   ____ _/ /_/ /_ / ___/__  ______  _____</span>
+<span style="color:green">  / __ \`/ __ \ \__ \/ / / / __ \/ ___/</span>
+<span style="color:yellow"> / /_/ / / / /__/ / /_/ / / / / /__</span>
+<span style="color:blue"> \__, /_/ /_/____/\__, /_/ /_/ \___/</span>
+<span style="color:purple">/____/           /____/</span>
 
 
 Usage: ghsync [options] [command]
