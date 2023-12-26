@@ -1,4 +1,4 @@
- ghsync -h
+ #ghsync -h
  ```
 
           __   _____
@@ -8,7 +8,6 @@
  \__, /_/ /_/____/\__, //_/ /_/\___/  
 /____/           /____/
 
-```
 
 Usage: ghsync [options] [command]
 
@@ -27,3 +26,5 @@ Options:
 
 Commands:
   sync [options]               Pushes changes to the remote repository.
+
+```
