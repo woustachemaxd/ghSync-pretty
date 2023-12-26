@@ -41,7 +41,7 @@ const initializeGit = () => {
                     printError('Failed to make the initial commit.');
                     process.exit(1);
                 }
-                printSuccess('Git repository initialized and committed successfully.');
+                printSuccess('Git repository initialized and committed successfully!');
             });
         });
     });
@@ -75,7 +75,7 @@ push
                             printError('Failed to push changes to the remote repository.');
                             process.exit(1);
                         }
-                        printSuccess('🚀 Changes pushed successfully.');
+                        printSuccess('🚀 Changes pushed successfully!');
                     });
                 });
             });
@@ -144,7 +144,7 @@ program
                             printError('Failed to commit changes.');
                             process.exit(1);
                         }
-                        printSuccess('🚀 Changes committed successfully.');
+                        printSuccess('🚀 Changes committed successfully!');
                     });
                 });
             }
@@ -176,7 +176,7 @@ program
                                 printError('Failed to push changes to the remote repository.');
                                 process.exit(1);
                             }
-                            printSuccess('🎉 Repository created and changes pushed successfully.');
+                            printSuccess('🎉 Repository created and changes pushed successfully!');
                         });
                     });
                 });
