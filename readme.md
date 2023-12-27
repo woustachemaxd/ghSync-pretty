@@ -28,4 +28,13 @@ Options:
 Commands:
   sync [options]               Pushes changes to the remote repository.
 
+
+Usage: ghsync sync [options]
+
+Pushes changes to the remote repository.
+
+Options:
+  -m, --message <message>  Git commit message
+  -h, --help               display help for command
+
 ```
