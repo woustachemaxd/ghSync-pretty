@@ -49,6 +49,20 @@ const initializeGit = () => {
 const program = new Command();
 
 const open = program.command('open');
+const deletegh = program.command('deletegh');
+
+deletegh
+        .description('Delete GitHub repo')
+        .action(() => {
+            exec('gh repo delete --yes', (error, stdout) => {
+                if(error) {
+                    printError("couldn't delete Github Repo");
+                    console.log(error);
+                    process.exit(1);
+                }
+                console.log(`☠️ GitHub repository deleted successfully!`)
+            })
+        })
 
 open
     .description('Opens the remote repository in the browser.')
