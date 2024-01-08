@@ -50,19 +50,41 @@ const program = new Command();
 
 const open = program.command('open');
 const deletegh = program.command('deletegh');
+const deleteall = program.command('deleteall');
 
-deletegh
-        .description('Delete GitHub repo')
-        .action(() => {
-            exec('gh repo delete --yes', (error, stdout) => {
-                if(error) {
-                    printError("couldn't delete Github Repo");
+deleteall
+    .description('Delete GitHub and Git repositories')
+    .action(() => {
+        exec('gh repo delete --yes', (error, stdout) => {
+            if (error) {
+                printError("couldn't delete Github Repo");
+                console.log(error);
+                process.exit(1);
+            }
+            console.log(`☠️ GitHub repository deleted successfully!`)
+            exec('shx rm -rf .git', (error, stdout) => {
+                if (error) {
+                    printError("couldn't delete Git Repo");
                     console.log(error);
                     process.exit(1);
                 }
-                console.log(`☠️ GitHub repository deleted successfully!`)
+                console.log(`💀 Git repository deleted successfully!`)
             })
         })
+    })
+
+deletegh
+    .description('Delete GitHub repo')
+    .action(() => {
+        exec('gh repo delete --yes', (error, stdout) => {
+            if (error) {
+                printError("couldn't delete Github Repo");
+                console.log(error);
+                process.exit(1);
+            }
+            console.log(`☠️ GitHub repository deleted successfully!`)
+        })
+    })
 
 open
     .description('Opens the remote repository in the browser.')
