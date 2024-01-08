@@ -56,12 +56,12 @@ deleteall
     .description('Delete GitHub and Git repositories')
     .action(() => {
         exec('gh repo delete --yes', (error, stdout) => {
-            if (error) {
+            if (error && error.code != 404) {
                 printError("couldn't delete Github Repo");
-                console.log(error);
-                process.exit(1);
             }
-            console.log(`☠️ GitHub repository deleted successfully!`)
+            else {
+                console.log(`☠️ GitHub repository deleted successfully!`)
+            }
             exec('shx rm -rf .git', (error, stdout) => {
                 if (error) {
                     printError("couldn't delete Git Repo");
