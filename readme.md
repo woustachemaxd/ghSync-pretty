@@ -12,6 +12,7 @@
 
 Usage: ghsync [options] [command]
 
+
 🚀 This Node.js command-line tool automates Git repository initialization, initial commit, and GitHub remote creation with customizable options. 🌐
 
 Options:
